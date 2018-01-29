@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
         btn_color.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                  final String[] arrayColors = {
                         "Rojo",
                         "Verde",
@@ -100,6 +102,36 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
                     }
                 });
                 colorsDialog.show();
+
+        /*
+
+                final CharSequence[] items = {" Easy "," Medium "," Hard "," Very Hard "};
+                final ArrayList<String> seletedItems=new ArrayList();
+                final AlertDialog.Builder colorsDialog = new AlertDialog.Builder(MainActivity.this);
+                colorsDialog.create();
+                colorsDialog.setTitle("Escoge un color").setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
+                        if (isChecked) {
+                            seletedItems.add(items[indexSelected].toString());
+                        } else if (seletedItems.contains(items[indexSelected].toString())) {
+                            seletedItems.remove(Integer.valueOf(indexSelected));
+                        }
+                    }
+                }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        for (int i = 0 ; i < seletedItems.size() ; i++){
+                            Toast.makeText(getApplicationContext(),seletedItems.get(i).toString(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                }).create();
+                colorsDialog.show();*/
             }
         });
 
